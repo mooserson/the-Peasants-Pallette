@@ -1,11 +1,11 @@
 const posts = [
   {
-    title: "Mama Rosa's Trattoria",
+    title: "George's Deep Dish",
     date: "2026-02-20",
     rating: 4,
-    photos: ["images/mama-rosas-1.jpg", "images/mama-rosas-2.jpg"],
-    review: "Tucked away on a quiet side street, Mama Rosa's serves up some of the most comforting Italian food I've had in a long time. The rigatoni bolognese was rich and hearty — clearly simmered for hours. The garlic bread was perfectly crisp on the outside, soft and buttery within. Service was warm and unhurried. My only gripe: the tiramisu was a touch too sweet. But I'll be back for that pasta alone.",
-    mapQuery: "Mama Rosa's Trattoria, New York"
+    photos: ["images/georges-deep-dish-1.jpg", "images/georges-deep-dish-2.jpg"],
+    review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    mapQuery: "George's Deep Dish, Chicago"
   },
   {
     title: "Golden Dragon Noodle House",
