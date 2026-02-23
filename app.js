@@ -136,14 +136,33 @@
     }
   }
 
-  // Fake hit counter
+  // Format number into the hit counter display
+  function formatCounter(num) {
+    var str = String(num);
+    while (str.length < 6) str = "0" + str;
+    return str.replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+  }
+
+  // Fetch real hit count from GoatCounter
   function initHitCounter() {
     var el = document.getElementById("hitCounter");
     if (!el) return;
-    var num = Math.floor(Math.random() * 8000) + 1337;
-    var str = String(num);
-    while (str.length < 6) str = "0" + str;
-    el.textContent = str.replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+    el.textContent = formatCounter(0);
+
+    var url = "https://peasantpalette.goatcounter.com/counter/" +
+              encodeURIComponent("/") + ".json";
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        try {
+          var data = JSON.parse(xhr.responseText);
+          var count = parseInt(data.count.replace(/\D/g, ""), 10) || 0;
+          el.textContent = formatCounter(count);
+        } catch (e) { /* keep showing 000,000 */ }
+      }
+    };
+    xhr.send();
   }
 
   // Scroll to hash target, rendering enough posts to reach it
